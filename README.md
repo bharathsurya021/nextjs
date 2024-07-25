@@ -105,7 +105,7 @@ git clone <repository-url>
 
 ### Switch to the Routing Branch
 
-Navigate to the cloned repository and switch to the `features/routing` branch:
+Navigate to the cloned repository and switch to the `features/dynamic-routes` branch:
 
 ```bash
 cd <repository-name>
