@@ -1,6 +1,3 @@
-Here's a README file explaining how routing works in Next.js and instructions on how to run the application from cloning the repository, moving to the `features/routing` branch, installing dependencies, and running the application.
-
-```markdown
 # Next.js Application Routing Guide
 
 ## Table of Contents
@@ -94,5 +91,5 @@ This guide provided an overview of the routing system in Next.js and detailed st
 
 ```
 
-Replace `<repository-url>` and `<repository-name>` with the appropriate values for your repository. This README provides a clear and concise guide for new developers to understand and get started with your Next.js application.
+Replace `<repository-url>` and `<repository-name>` with the appropriate values for your repository.
 ```
