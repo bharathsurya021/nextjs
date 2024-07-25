@@ -18,27 +18,30 @@ This guide explains how routing works in a Next.js application and provides inst
 ## Folder Structure
 
 The folder structure of this application is as follows:
+
 ```
 
 src/
 └── app/
-├── about/
-│ └── page.tsx
-├── blog/
-│ ├── first/
-│ │ └── page.tsx
-│ └── second/
-│ └── page.tsx
-├── profile/
-│ └── page.tsx
-└── page.tsx (home route)
+    ├── about/
+    │   └── page.tsx
+    ├── blog/
+    │   ├── first/
+    │   │   └── page.tsx
+    │   └── second/
+    │       └── page.tsx
+    ├── profile/
+    │   └── page.tsx
+    └── page.tsx (home route)
 
-````
+```
 
 ## Routing in Next.js
+
 In Next.js, the file system is used to define routes. Each file in the `pages` directory (or `app` directory if using the App Router) becomes a route.
 
 ### Examples:
+
 - `src/app/page.tsx` is the home route (`/`).
 - `src/app/about/page.tsx` is the about route (`/about`).
 - `src/app/profile/page.tsx` is the profile route (`/profile`).
@@ -46,13 +49,16 @@ In Next.js, the file system is used to define routes. Each file in the `pages` d
 - `src/app/blog/second/page.tsx` is another nested route under blog (`/blog/second`).
 
 ## Getting Started
+
 Follow these steps to get the application up and running.
 
 ### Clone the Repository
+
 First, clone the repository to your local machine:
+
 ```bash
 git clone <repository-url>
-````
+```
 
 ### Switch to the Routing Branch
 
