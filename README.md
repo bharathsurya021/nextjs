@@ -7,11 +7,13 @@
 - [Routing in Next.js](#routing-in-nextjs)
   - [Static Routes](#static-routes)
   - [Dynamic Routes](#dynamic-routes)
+  - [Nested Dynamic Routes](#nested-dynamic-routes)
 - [Getting Started](#getting-started)
   - [Clone the Repository](#clone-the-repository)
   - [Switch to the Routing Branch](#switch-to-the-routing-branch)
   - [Install Dependencies](#install-dependencies)
   - [Run the Application](#run-the-application)
+- [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -22,21 +24,26 @@ This guide explains how routing works in a Next.js application and provides inst
 The folder structure of this application is as follows:
 
 ```
+
 src/
-  └── app/
-      ├── about/
-      │   └── page.tsx
-      ├── blog/
-      │   ├── first/
-      │   │   └── page.tsx
-      │   └── second/
-      │       └── page.tsx
-      ├── profile/
-      │   └── page.tsx
-      ├── products/
-      │   └── [productId]/
-      │       └── page.tsx
-      └── page.tsx (home route)
+└── app/
+├── about/
+│ └── page.tsx
+├── blog/
+│ ├── first/
+│ │ └── page.tsx
+│ └── second/
+│ └── page.tsx
+├── profile/
+│ └── page.tsx
+├── products/
+│ └── [productId]/
+│ ├── page.tsx
+│ └── reviews/
+│ └── [reviewId]/
+│ └── page.tsx
+└── page.tsx (home route)
+
 ```
 
 ## Routing in Next.js
@@ -63,7 +70,7 @@ Example:
 
 - `src/app/products/[productId]/page.tsx` is a dynamic route for products. This route will match URLs like `/products/1`, `/products/2`, etc.
 
-In the `[productId]` folder, the `page.tsx` file can use the `useRouter` hook from Next.js to access the `productId` parameter and render content dynamically based on it.
+In the `[productId]` folder, the `page.tsx` file access the `productId` parameter and render content dynamically based on it.
 
 Here’s an example of how you can dynamically render content in `src/app/products/[productId]/page.tsx`:
 
@@ -91,6 +98,43 @@ export default function ProductDetails({
 }
 ```
 
+### Nested Dynamic Routes
+
+Nested dynamic routes allow for even more granular URL matching and dynamic content rendering.
+
+Example:
+
+- `src/app/products/[productId]/reviews/[reviewId]/page.tsx` is a nested dynamic route. This route will match URLs like `/products/1/reviews/1`, `/products/2/reviews/5`, etc.
+
+In the `[reviewId]` folder, the `page.tsx` file access both the `productId` and `reviewId` parameters and render content dynamically based on them.
+
+Here’s an example of how you can dynamically render content in `src/app/products/[productId]/reviews/[reviewId]/page.tsx`:
+
+```jsx
+// src/app/products/[productId]/reviews/[reviewId]/page.tsx
+export default function ReviewDetail({
+  params,
+}: {
+  params: { productId: string, reviewId: string },
+}) {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+        <h1 className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          Product {params.productId} review Details &nbsp;
+        </h1>
+      </div>
+      <h2>
+        Review {params.reviewId}: Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Maiores, atque aut! Illo qui soluta quae, eveniet
+        cupiditate quasi modi quas libero vitae sint. Iste nihil magni voluptas
+        optio, minus molestiae.
+      </h2>
+    </main>
+  );
+}
+```
+
 ## Getting Started
 
 Follow these steps to get the application up and running.
@@ -109,7 +153,7 @@ Navigate to the cloned repository and switch to the `features/dynamic-routes` br
 
 ```bash
 cd <repository-name>
-git checkout features/routing
+git checkout features/dynamic-routes
 ```
 
 ### Install Dependencies
@@ -141,5 +185,5 @@ This guide provided an overview of the routing system in Next.js and detailed st
 ```
 
 Replace `<repository-url>` and `<repository-name>` with the appropriate values for your repository.
-This README now includes information on both static and dynamic routing in Next.js, along with the updated folder structure and instructions for setting up and running the application.
+This README now includes information on static, dynamic, and nested dynamic routing in Next.js, along with the updated folder structure and instructions for setting up and running the application.
 ```
