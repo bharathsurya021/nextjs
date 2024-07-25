@@ -27,22 +27,24 @@ The folder structure of this application is as follows:
 
 src/
 └── app/
-├── about/
-│ └── page.tsx
-├── blog/
-│ ├── first/
-│ │ └── page.tsx
-│ └── second/
-│ └── page.tsx
-├── profile/
-│ └── page.tsx
-├── products/
-│ └── [productId]/
-│ ├── page.tsx
-│ └── reviews/
-│ └── [reviewId]/
-│ └── page.tsx
-└── page.tsx (home route)
+    ├── about/
+    │   └── page.tsx
+    ├── blog/
+    │   ├── first/
+    │   │   └── page.tsx
+    │   └── second/
+    │       └── page.tsx
+    ├── profile/
+    │   └── page.tsx
+    ├── products/
+    │   ├── page.tsx
+    │   └── [productId]/
+    │       ├── page.tsx
+    │       └── reviews/
+    │           └── [reviewId]/
+    │               └── page.tsx
+    └── page.tsx (home route)
+
 
 ```
 
